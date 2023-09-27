@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    background: rgb(0, 44, 124);
+    background: radial-gradient(circle, rgba(0, 44, 124, 1) 0%, rgba(0, 0, 0, 1) 73%);
+    height: 100vh;
+    width: 100vh;
+}
+
+
+#loading {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading img {
+    width: 300px;
+}
+
+.genie {
+    width: 100px;
+    height: auto;
+}
+
+#loading p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Hide the loading animation once the page has finished loading */
+body.loaded #loading {
+    display: none;
+}
+
+
+
+h1{
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    margin-top: 9%;
+    text-shadow: 0 0 4px #ffffff;
+    margin-left: 19%;
+}
+
+select {
+    position: relative;
+    margin-top: 20%;
+    margin-left: 30%;
+    background-color: #ffffff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 27px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    background-color: rgb(19, 19, 19);
+    top: 290px;
+    left: 660px;
+    border: 1px solid #445dff;
+    box-shadow: 0 0 10px #00eaff;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(19, 40, 80, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(153, 14, 14, 0.125);
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.btn{
+    position:absolute;
+    background-color: #006aff;
+    color: #ffffff;
+    padding: 16px 40px;
+    border-radius: 5px;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 0 20px #006aff;
+    border-width: 0;
+    margin-top:35%;
+    margin-left: 29%;
+}
+
+
+
+.btn:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 30px #006aff;
+}

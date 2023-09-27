@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Keyword.css">
+    <title>Keywords</title>
+</head>
+    <body>
+        <div class="keyword">
+            <h1>How Many Slides You Want?</h1>
+            <input class="spinner" type="number" value="2" min="0" max="100">
+            <p>____________________________________________________________________________________</p>
+            <h2>Enter Your Keywords</h2>
+            <input class="input" type="text" id="myInput" onkeydown="handleKeyDown(event)">
+            <div class="tags" style="position: fixed;
+    top: 40%;
+    left: 3%;
+    width: 60%;"></div>
+            <script>
+                var keywords = new Array();
+               const tagsContainer = document.querySelector('.tags');
+                const input = document.getElementById('myInput');
+                input.focus();
+
+                function handleKeyDown(event) {
+                    if (event.key === 'Enter' && input.value.trim() !== '') {
+                        createTag(input.value.trim());
+                        keywords.push(input.value.trim());
+                        input.value = '';
+                        input.classList.remove('blue-border');
+                    } else if (event.key === 'Backspace' && input.value.trim() === '') {
+                        removeTag();
+                        keywords.pop();
+                    } else {
+                        input.classList.add('blue-border');
+                    }
+                }
+
+                function createTag(text) {
+                    const tag = document.createElement('div');
+                    tag.classList.add('tag');
+                    tag.innerHTML = `
+					${text}<span>&times;</span>
+				`;
+                    tagsContainer.appendChild(tag);
+                    tag.querySelector('span').addEventListener('click', () => {
+                        tagsContainer.removeChild(tag);
+                    });
+                }
+                
+
+                function removeTag() {
+                    const tags = tagsContainer.querySelectorAll('.tag');
+                    const lastTag = tags[tags.length - 1];
+                    if (lastTag) {
+                        tagsContainer.removeChild(lastTag);
+                    }
+                }
+            </script>
+        </div>
+        <div class="suggestion">
+            <h1>Suggestion</h1>
+            <p>_______________________________________</p>
+        </div>
+
+        <div class=arrow>
+            <a href="/create"><img src="https://cdn-icons-png.flaticon.com/512/10337/10337645.png" alt=""></a>
+        </div>
+
+        <script>
+            const spinner = document.querySelector('.spinner');
+            let value = spinner.value;
+            spinner.onchange = function() {
+                value = spinner.value;
+            }
+
+            const btn = document.querySelector('a');
+
+            btn.addEventListener('click', () => {
+                // post to /generate
+                fetch('/keyword', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        slides: value,
+                        keywords: keywords
+                    })
+                }).then(res => res.json()).then(data => {
+                    console.log(data);
+                })
+            })
+
+        </script>
+
+    </body>
+</html>

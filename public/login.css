@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    background: rgb(0, 27, 78);
+    background: radial-gradient(circle, rgb(5, 33, 86) 0%, rgba(0, 0, 0, 1) 73%);
+    height: 100vh;
+    width: 100vh;
+}
+
+#loading {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading img {
+    width: 300px;
+}
+
+.genie {
+    width: 100px;
+    height: auto;
+}
+
+#loading p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Hide the loading animation once the page has finished loading */
+body.loaded #loading {
+    display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 0px solid green;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+form {
+
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+}
+
+
+/* form in centre of page with animation */
+form {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    animation: glow 2s infinite;
+}
+
+/* form outside glow in blue color */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px #006aff;
+    }
+
+    50% {
+        box-shadow: 0 0 30px #006aff, 0 0 40px #006aff;
+    }
+
+    100% {
+        box-shadow: 0 0 20px #006aff;
+    }
+}
+
+
+
+/* form in centre of page  */
+form {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+
+
+
+/* form outside glow in blue color */
+
+form {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 20px #006aff;
+}
+
+/* label color white in form */
+form label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: white;
+}
+
+/* input box in form */
+form input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* input box in grey color and email placeholder in white color */
+form input[type="text"],
+input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #797979;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+
+/* change the button in blue color and white color text */
+
+form input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    box-shadow: 0 0 10px #006aff;
+    background-color: #006aff;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: 'roboto', sans-serif;
+}
+
+/* button outerglow when hover  */
+
+form input[type="submit"]:hover {
+    border: none;
+    outline: none;
+    height: 40px;
+    box-shadow: 0 0 20px #2680ff;
+    background-color: #1778ff;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: 'roboto', sans-serif;
+}
+
+/* border outline color in ligth blue color */
+
+form input[type="text"]:focus,
+input[type="password"]:focus {
+    border-bottom: 2px solid #2a83ff;
+}
+
+/* h1 in middle on font size 10 in white color */
+
+form h1 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: 'roboto', sans-serif;
+}
+
+/* form button in blue color and white text */
+
+form button {
+    margin-top: 7%;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    box-shadow: 0 0 10px #006aff;
+    background-color: #006aff;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* text color of white form button  */
+
+form button:hover {
+    margin-top: 7%;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    box-shadow: 0 0 20px #2680ff;
+    background-color: #1778ff;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+form button a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'roboto', sans-serif;
+}
+
+/* img upto the form  */
+
+img {
+    z-index: 1;
+    width: 140px;
+    /* position: absolute; */
+    /* margin-top: 110px; */
+    /* margin-right: 49px; */
+    /* left: calc(50% - 154px); */
+}
+
+p {
+    margin-top: 30px;
+    color: white;
+    font-size: 15px;
+    font-family: 'roboto', sans-serif;
+}
+
+/* create one underline remove the underline from the text and light blue color */
+
+p a {
+    text-decoration: none;
+    color: #2a83ff;
+    font-size: 15px;
+    font-family: 'roboto', sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 15px;
+    font-family: 'roboto', sans-serif;
+}
+
+.heading {
+    /* position: absolute; */
+    /* left: 53%; */
+    /* top: 20%; */
+    font-size: x-large;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 13%;
+    left: 46%;
+    align-items: center;
+    gap: 10px;
+}
+
+h1.heading {
+    color: #ffffff;
+}
+
+.eye-icon {
+    position: absolute;
+    margin-left: -25px;
+    margin-top: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.eye-icon img {
+    width: 20px;
+    height: 20px;
+}

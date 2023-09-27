@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(173deg, rgba(0, 0, 0, 1) 0%, rgb(10, 10, 55) 50%, rgba(22, 45, 134, 1) 100%);
+}
+ 
+#loading {
+    position: fixed;
+    z-index: 9999; 
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading img {
+    width: 300px;
+}
+
+.genie {
+    width: 100px;
+    height: auto;
+}
+
+#loading p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Hide the loading animation once the page has finished loading */
+body.loaded #loading {
+    display: none;
+}
+
+.slidebar{
+    background: #000000;
+    padding: 0px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    top: 0%;
+    width: 100vw;;
+}
+
+nav ul {
+    display:flex;
+    list-style: none;
+    position: relative;
+    /* left: 31%; */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 20px 45px;
+}
+
+#nav-button{
+        position: relative;
+        background-color: #006aff;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 300;
+        cursor: pointer;
+        box-shadow: 0 0 20px #006aff;
+        border-width: 0;
+        left: 10%;
+}
+
+nav ul li {
+    margin-left: 110px;
+    display: flex;
+    background-color: #000000;
+   
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 30px;
+    margin-right: 14%;
+    margin-left: 30%;
+}
+nav .logo-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+slidebar{
+    display: flex;
+    justify-content: left;
+    background-color: #000000;
+}
+
+/* stable the navigation bar and scroll bg will black color */
+
+nav{
+    position: fixed;
+    background-color: #000000;
+}
+nav ul{
+    background-color: #000000;
+}
+
+.btn{
+    text-decoration: none;
+    color: #fff;
+}
+
+.home_screen a {
+    background-color: #006aff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 0 20px #006aff;
+    border-width: 0;
+    margin-top: 5%;
+    margin-left: 41%;
+    text-decoration: none;
+}
+
+.home_screen a:hover {
+    box-shadow: 0 0 30px #006aff;
+}
+
+
+.home_screen {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadein 1s ease-in-out forwards;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loaded .home_screen {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadein 1s ease-in-out forwards;
+}
+
+.loaded .home_screen p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadein 1s ease-in-out 0.5s forwards;
+}
+
+.loaded .btn {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadein 1s ease-in-out 1s forwards;
+}
+
+.home_screen h1 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 15%;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadein 1s ease-in-out 0.5s forwards;
+}
+
+/* animate the h1 .home_screen */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.home_screen p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 20px;
+    font-family: 'ubuntu', sans-serif;
+    transform: translateY(-20px);
+    animation: fadein 1s ease-in-out 0.5s forwards;
+    margin-bottom: 4%;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* home about heading  */
+
+.home_about h1 {
+    display: block;
+    text-align: left;
+    font-size: 35px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 100px;
+    margin-left: 10%;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slidein 1s ease-in-out forwards;
+}
+
+/* animate the h1 .home_about */
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.home_about p {
+    display: block;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 300;
+    color: #ffffffa8;
+    margin-top: 20px;
+    margin-left: 10%;
+    font-family: 'ubuntu', sans-serif;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadein 1s ease-in-out forwards;
+}
+
+/* animate the p .home_about */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* button blue color and glow */
+.btn {
+    background-color: #006aff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 0 20px #006aff;
+    border-width: 0;
+    margin-top: 20px;
+    margin-left: 45%;
+    transform: translateY(50px);
+    animation: slidein 1s ease-out 0.5s forwards;
+}
+
+/* animate the button .home_screen  */
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* button hover glow intensity increase */
+
+.btn:hover{
+    box-shadow: 0 0 30px #006aff;
+}
+
+.home_about h1{
+    font-size: px;
+}    
+
+.footer_home{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 100px;
+}
+
+/* footer ul navigate */
+
+.footer_home ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    padding: 30px;
+}
+
+/* footer ul li */
+
+.footer_home ul li{
+    margin-left: 20px;
+}
+
+/* footer ul li a */
+
+.footer_home ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 50%;
+}
+
+/* logo height 30 and opacity 50  */
+
+.footer_home img{
+    height: 70px;
+    opacity: 50%;
+}
+
+/* .logo-title opacatiy 50 */
+
+.footer_home .logo-title{
+    opacity: 50%;
+}
+
+/* title near to logo */
+
+.footer_home .logo-title{
+    margin-left: -120px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    margin-top: 0px;
+    opacity: 50%;
+}
+
+
+

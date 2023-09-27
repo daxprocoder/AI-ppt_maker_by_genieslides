@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background: rgb(0, 48, 124);
+background: rgb(0, 14, 74);
+    background: linear-gradient(90deg, rgba(0, 14, 74, 1) 0%, rgba(0, 0, 0, 1) 51%, rgba(0, 14, 74, 1) 100%);
+}
+
+
+/* img is on the top center of the page */
+
+.verification img {
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 45%;
+    left: 0;
+    width: 10%;
+    height: 10%;
+}
+
+/* center align h2 heading */
+
+.verification h2 {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* center align h1 heading */
+
+.verification h1 {
+    font-family: 'ubuntu', sans-serif;
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* center align p text */
+
+.verification p {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    margin-top: 23%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* verification input dark blue with glowing light blue border */
+
+.verification input {
+    position: absolute;
+    margin-top: 27%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 7%;
+    border: 1px solid #006aff;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    outline: none;
+    text-align: center;
+    font-size: 33px;
+}
+
+/* inside input text verification code in center */
+
+.verification > input::placeholder {
+    text-align: center;
+    font-size:30px;
+    opacity: 20%;
+}
+
+/* input text in centre of box */
+/* button dark blue color text inside white color and its glow */
+
+.verifybtn {
+    background-color: #006aff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 0 10px #006aff;
+    border-width: 0;
+    margin-top: 33%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

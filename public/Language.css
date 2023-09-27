@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    background: rgb(6, 7, 22); 
+    background: radial-gradient(circle, rgb(15, 18, 57) 0%, rgba(0, 0, 0, 1) 59%); 
+    height: 100vh;
+    width: 100vh;
+}
+
+.selection h1{
+        position: absolute;
+            color: #ffffff;
+            text-align: center;
+            font-size: 70px;
+            font-family: 'roboto', sans-serif;
+            font-weight: lighter;
+            margin-top: 5%;
+            margin-left: 30%;
+}
+
+/* select language picker button in bottom of h1 with grey transparent*/
+
+.selection select{
+    position: relative;
+    margin-top: 20%;
+    margin-left: 30%;
+    background-color: #ffffff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    background-color: rgb(19, 19, 19);
+    top: 330px;
+    left: 640px;
+}
+
+/* when hover to select the select the boundary of select is glow in blue color  */
+
+.selection select:hover{
+    border: 1px solid #445dff;
+    box-shadow: 0 0 20px #00eaff;
+}
+
+.selection select::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* inside select option grey dark background text in white */
+
+.selection select option{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 0px;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    background-color: rgba(0, 0, 0, 0.901);
+}
+
+/* on hover on select option glow it white color */
+
+/* label of word limit in white color */
+
+.slider label{
+    position: relative;
+    color: #ffffff;
+    font-family: 'roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 10%;
+    margin-left: 17%;
+    top: 25pc;
+    left: 32pc;
+}
+
+
+
+.slider input[type="range"]{
+    margin-top: 59%;
+    margin-left: 67%;
+    -webkit-appearance: none;
+    width: 70%;
+    height: 15px;
+    background: #ffffff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+/* the blue button is glow of  */
+
+.slider input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    margin-top: -0.5%;
+    background: hsl(0, 0%, 2%);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 7px #0091ff;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb:hover {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    margin-top: -0.5%;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 10px hsla(196, 96%, 67%, 0.668);
+}
+
+.slider h1{
+    position: relative;
+    color: #ffffff;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    margin-top: 2%;
+    margin-left: -1.5%;
+    left: 32pc;
+}
+
+/* fit the bg image to screen resolution */
+
+.bg-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    /* Initial opacity set to 0 */
+    animation-name: fadeIn;
+    /* Name of the animation */
+    animation-duration: 1s;
+    /* Duration of the animation */
+    animation-timing-function: ease-in-out;
+    /* Timing function for the animation */
+    animation-delay: 0s;
+    /* Delay before the animation starts */
+    animation-iteration-count: 1;
+    /* Number of times the animation should repeat */
+    animation-direction: normal;
+    /* Direction of the animation */
+    animation-fill-mode: forwards;
+    /* How the element should be styled after the animation */
+}
+
+/* Keyframes for the fadeIn animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        /* Starting opacity set to 0 */
+        transform: translateY(100%);
+        /* Starting position at 100% from bottom */
+    }
+
+    100% {
+        opacity: 0.15;
+        /* Ending opacity set to 0.15 */
+        transform: translateY(0%);
+        /* Ending position at 0% from bottom */
+    }
+}
+
+/* Add animation to the select button */
+.selection select {
+    /* other styles... */
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+/* Define the animation keyframes for sliding up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add animation to the label of word limit */
+.slider label {
+    /* other styles... */
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+/* Define the animation keyframes for fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.selection h1 {
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    margin-top: 5%;
+    /* Initial position above the viewport */
+    margin-left: 30%;
+    /* Initial position from left */
+    animation-name: slideDown;
+    /* Name of the animation */
+    animation-duration: 1s;
+    /* Duration of the animation */
+    animation-timing-function: ease-in-out;
+    /* Timing function for the animation */
+    animation-delay: 0s;
+    /* Delay before the animation starts */
+    animation-iteration-count: 1;
+    /* Number of times the animation should repeat */
+    animation-direction: normal;
+    /* Direction of the animation */
+    animation-fill-mode: forwards;
+    /* How the element should be styled after the animation */
+}
+
+/* Keyframes for the slideDown animation */
+@keyframes slideDown {
+    0% {
+        top: -50px;
+        /* Starting position above the viewport */
+    }
+
+    100% {
+        top: 5%;
+        /* Ending position at 5% from the top */
+    }
+}
+
+/* arrow a img in right buttom corner of page */
+
+.arrow a img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: 3%;
+    margin-left: 94%;
+    z-index: 1;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}

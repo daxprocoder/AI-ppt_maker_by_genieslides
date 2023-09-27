@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Create.css">
+    <title>create</title>
+</head>
+
+<body>
+    <h1>Select your tone of Presentation</h1>
+    <select id="select-options" name="options">
+        <option value="Normal">Normal</option>
+        <option value="friendly">Friendly</option>
+        <option value="professional">Professional</option>
+    </select>
+
+
+    <button class="btn">Generate</button>
+    <img src="">
+
+    <script>
+        const select = document.querySelector('#select-options');
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', () => {
+            const selected = select.options[select.selectedIndex].value;
+
+            //send post to server
+            fetch('/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    selected: selected
+                })
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                });
+        })
+    </script>
+
+</body>
+
+</html>

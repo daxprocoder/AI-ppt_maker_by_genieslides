@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.min.css"
+        integrity="sha384-2QFUBtStz9tW3qy5JV5wt5r+tZneCXhDQ8J+kJHRMOHjoGzv5C9Jluk/ePbV7GJH" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.min.js"
+        integrity="sha384-1nKVqJlVYtxNlFXFmdZ9Nz8n3q1sDwI8veFLOi0okBkkMCv9MVEJeR8iUtYTWp+A"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/f68b66d5c5.js" crossorigin="anonymous"></script>
+    <title>Account</title>
+</head>
+
+<body>
+
+    <!-- navigation bar in left side  -->
+
+    <div class="nav">
+        <ul>
+            <li><a href="/dashboard"><img class="icon"
+                        src="https://cdn-icons-png.flaticon.com/512/9055/9055096.png">᲼᲼Dashboard</a></li>
+            <li><a href="/projects"><img class="icon"
+                        src="https://cdn-icons-png.flaticon.com/512/1001/1001259.png">᲼᲼Projects</a></li>
+            <li><a href="/notification"><img class="icon"
+                        src="https://cdn-icons-png.flaticon.com/512/9187/9187534.png">᲼᲼Notification</a></li>
+            <li><a href="/share"><img class="icon"
+                        src="https://cdn-icons-png.flaticon.com/512/3925/3925158.png">᲼᲼Share</a></li>
+            <li><a href="/trash"><img class="icon"
+                        src="https://cdn-icons-png.flaticon.com/512/9350/9350278.png">᲼᲼Trash</a></li>
+            <li><a href="/help"><img class="icon"
+                        src="https://cdn-icons-png.flaticon.com/512/4212/4212339.png">᲼᲼Help</a></li>
+            <li><a class="account" href="/account"><img class="icon"
+                        src="https://cdn-icons-png.flaticon.com/512/9692/9692175.png">᲼᲼Account</a></li>
+        </ul>
+    </div>
+
+
+    <!-- main content in left side -->
+
+    <div class="content">
+
+        <!-- a button in which type create ppt -->
+
+        <div class='template' style="height:70vh;">
+            <h1>Account</h1>
+            <p>____________________________________________________________________________________________________________________________________________
+            </p>
+            <h3>Account settings</h3>
+            <div class="account_detail">
+                <img class="profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                <button class="upload-btn" onclick="uploadProfilePic()">Upload</button>
+
+
+                <div id="cropOption"
+                    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:9999;">
+                    <div style="max-width:80%; margin:auto; margin-top:100px; background-color:#fff; padding:20px; text-align:center;">
+                        <h3>Crop Image</h3>
+                        <div id="croppedImageContainer"
+                            style="max-width:300px; max-height:300px; margin:auto; overflow:hidden; border-radius:50%;">
+                            <img id="croppedImage" style="max-width:100%; max-height:100%;" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Input field to upload profile picture -->
+                <input type="file" id="fileInput" class="file-input">
+                <span id="fileName" style="display: none;" class="file-name"></span>
+
+                <div class="user-info">
+                    <button class="edit-profile" onclick="editProfile()">Edit Profile</button>
+                    <div>
+                        <label for="Name">Name:</label>
+                        <h4 id="name">Daksh Sharma</h4>
+                    </div>
+                    <hr>
+                    <div>
+                        <label for="Email">Email:</label>
+                        <h4 id="email">dakshsharma1910@gmail.com</h4>
+                    </div>
+                    <hr>
+                    <div>
+                        <label for="Phone">Phone:</label>
+                        <h4 id="phone">+91 9982892425</h4>
+                    </div>
+                    <hr>
+                    <hr>
+                </div>
+
+            </div>
+            <div class="logout_editprofile">
+                <a href="/logout" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script>
+        
+            function uploadProfilePic() {
+                document.getElementById('fileInput').click();
+            }
+
+            document.getElementById('fileInput').addEventListener('change', function (e) {
+                var file = e.target.files[0];
+                var fileName = file.name;
+                document.getElementById('fileName').innerText = fileName;
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.id = 'profileImage';
+                    img.style.maxWidth = '100%';
+                    img.style.maxHeight = '100%';
+                    img.style.borderRadius = '50%';
+                    var imageContainer = document.createElement('div');
+                    imageContainer.style.overflow = 'hidden';
+                    imageContainer.style.borderRadius = '50%';
+                    imageContainer.style.width = '150px';
+                    imageContainer.style.height = '150px';
+                    imageContainer.appendChild(img);
+                    var cropOption = document.getElementById('cropOption');
+                    cropOption.innerHTML = '';
+                    cropOption.appendChild(imageContainer);
+                    cropOption.style.display = 'block';
+
+                    img.addEventListener('load', function () {
+                        var cropper = new Cropper(img, {
+                            aspectRatio: 1,
+                            viewMode: 1,
+                            autoCropArea: 1,
+                            crop: function (e) {
+                                // Update preview of cropped image
+                                var canvas = cropper.getCroppedCanvas();
+                                var croppedImage = document.getElementById('croppedImage');
+                                croppedImage.src = canvas.toDataURL();
+                            }
+                        });
+
+                        var cropBtn = document.createElement('button');
+                        cropBtn.textContent = 'Crop';
+                        cropBtn.addEventListener('click', function () {
+                            // Get cropped image data URL and set it as profile picture
+                            var canvas = cropper.getCroppedCanvas();
+                            var croppedImageDataURL = canvas.toDataURL();
+                            var profileImage = document.getElementById('profileImage');
+                            profileImage.src = croppedImageDataURL;
+                            profileImage.style.borderRadius = '50%';
+                            cropOption.style.display = 'none';
+                        });
+
+                        var cancelBtn = document.createElement('button');
+                        cancelBtn.textContent = 'Cancel';
+                        cancelBtn.addEventListener('click', function () {
+                            // Hide crop option without saving changes
+                            cropOption.style.display = 'none';
+                        });
+
+                        cropOption.appendChild(cropBtn);
+                        cropOption.appendChild(cancelBtn);
+                    });
+                };
+                reader.readAsDataURL(file);
+            });
+
+            function editProfile() {
+                var name = document.getElementById('name');
+                var email = document.getElementById('email');
+                var phone = document.getElementById('phone');
+                var address = document.getElementById('address');
+
+                // Enable editing of profile information
+                name.contentEditable = true;
+                email.contentEditable = true;
+                phone.contentEditable = true;
+                address.contentEditable = true;
+
+                // Add focus to the first editable field
+                name.focus();
+
+                // Change Edit Profile button text to Save Changes
+                var editProfileBtn = document.querySelector('.edit-profile');
+                editProfileBtn.innerText = 'Save Changes';
+                editProfileBtn.onclick = saveProfileChanges;
+            }
+
+            function saveProfileChanges() {
+                var name = document.getElementById('name');
+                var email = document.getElementById('email');
+                var phone = document.getElementById('phone');
+                var address = document.getElementById('address');
+
+        // Disable editing of profile information
+        name.contentEditable = false;
+                email.contentEditable = false;
+                phone.contentEditable = false;
+                address.contentEditable = false;
+
+                 // Change Save Changes button text back to Edit Profile
+                var editProfileBtn = document.querySelector('.edit-profile');
+                editProfileBtn.innerText = 'Edit Profile';
+                editProfileBtn.onclick = editProfile;
+            }
+    </script>
+
+</body>
+
+</html>

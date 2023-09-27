@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background: rgb(0, 0, 0);
+}
+
+/* navigation bar in left side */
+
+.nav ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 13%;
+    height: 100%;
+    background: #000;
+    font-size: 15px;
+    font-family: 'roboto', sans-serif;
+    padding-top: 2.5%;
+    margin-left: 1%;
+}
+
+/* nav bar text color white */
+
+.nav ul li a {
+    color: #fff;
+    display: block;
+    padding: 20px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    text-align: left;
+    opacity: 60%;
+}
+
+.nav ul li a img {
+    width: 18px;
+    height: 18px;
+    opacity: 100%;
+    margin-bottom: -2.0px;
+}
+
+
+/* mouse hover on nav bar text gradient color change */
+
+.nav ul li a.account {
+    color: #ffffff;
+    opacity: 100%;
+
+}
+
+/* glow when hover  */
+
+.nav ul li a:hover {
+    background: #3f424699;
+    color: #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+    border-radius: 10px 10px;
+
+}
+
+.nav ul li a.account {
+    margin-top: 130%;
+}
+
+/* content background color white and text in black */
+
+.content {
+
+    background: rgb(1, 0, 80);
+    background: radial-gradient(circle, rgba(1, 0, 80, 1) 0%, rgba(0, 0, 0, 1) 68%);
+    color: #ffffff;
+    padding: 12px 16px;
+    margin-left: 200px;
+    min-height: 100vh;
+}
+
+.create button {
+    background-color: #006aff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 0 20px #006aff;
+    border-width: 0;
+    margin-top: 5%;
+    margin-left: 41%;
+}
+
+
+
+.create button:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.create button:hover {
+    box-shadow: 0 0 30px #006aff;
+}
+
+/* template heading */
+.template h1 {
+    text-align: center;
+    margin-top: 4%;
+    font-size: 40px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-right: 75%;
+}
+
+.template p {
+    margin-top: 1%;
+    opacity: 70%;
+    color: #7c8697;
+    margin-left: 5%;
+}
+
+.template h3 {
+    margin-top: 1%;
+    opacity: 70%;
+    color: #7c8697;
+    margin-left: 5%;
+    font-size: 15px;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.profile {
+    width: 10%;
+    height: 100%;
+    object-fit: cover;
+    margin-right: 2%;
+    vertical-align: middle;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.upload-btn {
+    top: 6rem;
+    position: relative;
+    right: 9.5%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-info {
+    margin-left: -6%;
+    width: 100%;
+}
+
+.user-info h4 {
+    display: inline;
+    margin-left: 2%;
+    background: rgb(1 0 52);
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.user-info div {
+    padding: 1%;
+    margin-top: 1%;
+    /* margin-bottom: 1%; */
+}
+
+.user-info hr {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 2%;
+    border: 1px solid #7c8697;
+    width: 50%;
+}
+
+
+
+
+.profile-pic2 {
+    width: 10%;
+    height: 100%;
+    object-fit: cover;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.upload-btn:hover {
+    background-color: #0b64ff;
+}
+
+.file-input {
+    display: none;
+}
+
+/* upload button glow blue color */
+
+.upload-btn:hover {
+    box-shadow: 0 0 20px #0059ff;
+}
+
+.file-name {
+    margin-top: 5px;
+}
+
+.account_detail {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.logout_editprofile {
+    position: relative;
+    left: 13rem;
+    margin-top: 1rem;
+    width: 8rem;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    background-color: red;
+}
+
+
+/* logout button glow boundary */
+.logout_editprofile:hover {
+    box-shadow: 0 0 20px #ff0303;
+}
+
+
+.logout_editprofile>a {
+    color: white;
+    text-decoration: none;
+}
+
+.edit-profile {
+    display: block;
+    padding: 1%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    background-color: rgb(0, 196, 0);
+    border-radius: 10px;
+    border-width: 0;
+    color: white;
+    margin-left: 10px;
+}
+hr{
+    opacity: 50%;
+    height: 1px;
+}
+
+/* glow the edit profile button */
+
+.edit-profile:hover {
+    box-shadow: 0 0 20px #00a500;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .template h1 {
+        margin-right: 0;
+    }
+
+    .template p,
+    .template h3 {
+        margin-left: 0;
+    }
+
+    .circle {
+        width: 5px;
+        height: 5px;
+    }
+
+    .upload-btn,
+    .file-name {
+        margin-bottom: 5px;
+        margin-right: 5px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source Serif Pro:wght@300&display=swap');
+
+
+margin {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100vh;
+    height: 420vh;
+    background: rgb(235, 213, 213);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(3, 24, 64) 20%, rgba(0, 0, 0, 1) 47%, rgb(5, 25, 64) 69%, rgba(0, 0, 0, 1) 87%, rgb(6, 30, 73) 100%);
+}
+
+
+/* h1 in the cntre top iof the page and the font family i s source */
+
+h1 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: -105%;
+}
+
+h2 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: -105%;
+}
+
+h3 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-left: -60%;
+    margin-top: 2%;
+}
+
+h4 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-left: -65%;
+    margin-top: -1%;
+}
+
+
+p{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    white-space: pre-wrap;
+    color: white;
+    text-align:center;
+    margin-top: 3%;
+    position: relative;
+    left: 50%;    
+}
+
+
+

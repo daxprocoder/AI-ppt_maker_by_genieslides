@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Generate.css">
+    <title>Generate</title>
+</head>
+
+<body>
+    <div class="create">
+        <div class="title">
+            <h1>Enter the Title</h1>
+            <input type="text" id="input-field" placeholder="Make Your Wish!">
+            <a id="submit-btn" onclick="javascript" href="/language"><img
+                    src="https://cdn-icons-png.flaticon.com/512/10337/10337645.png" alt=""></a>
+        </div>
+    </div>
+    <div class="bg-image">
+        <img src="images/generate.png" alt="logo">
+    </div>
+    <script>
+        const title = document.querySelector('#input-field');
+        const btn = document.querySelector('#submit-btn');
+
+        const handleFormSubmit = (event) => {
+            event.preventDefault();
+            if (title.value.trim() === '') {
+                alert('Please enter a title.');
+                return;
+            }
+            fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: title.value
+                })
+            })
+                .then(res => {
+                    if (res.ok) {
+                        return res.json();
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    console.log(data);
+                    window.location.href = "/language";
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        };
+
+        const inputField = document.getElementById('input-field');
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.addEventListener('click', (event) => {
+            if (inputField.value.trim() === '') {
+                event.preventDefault();
+                alert('Please enter a value in the input field.');
+            }
+        });
+
+        inputField.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                handleFormSubmit(event);
+            }
+        });
+    </script>
+</body>
+
+</html>

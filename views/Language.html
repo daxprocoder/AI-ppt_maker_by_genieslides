@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language</title>
+    <link rel="stylesheet" href="Language.css">
+</head>
+
+<body>
+    <div class="bg-image">
+        <img src="images/language.png" alt="language">
+    </div>
+    <div class="selection">
+        <h1>Select your language <Br>Presentation</h1>
+
+        <select class="language-select" name="language-picker-select" id="language-picker-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+            <option value="ar">العربية</option>
+            <option value="ru">Русский</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português</option>
+            <option value="tr">Türkçe</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="ms">Bahasa Melayu</option>
+            <option value="th">ภาษาไทย</option>
+            <option value="bn">বাংলা</option>
+            <option value="pa">ਪੰਜਾਬੀ</option>
+            <option value="ta">தமிழ்</option>
+            <option value="te">తెలుగు</option>
+            <option value="ur">اردو</option>
+            <option value="fa">فارسی</option>
+            <option value="mr">मराठी</option>
+            <option value="gu">ગુજરાતી</option>
+            <option value="kn">ಕನ್ನಡ</option>
+            <option value="ml">മലയാളം</option>
+            <option value="si">සිංහල</option>
+            <option value="ne">नेपाली</option>
+            <option value="sd">سنڌي</option>
+            <option value="km">ភាសាខ្មែរ</option>
+            <option value="lo">ລາວ</option>
+            <option value="my">မြန်မာ</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="zh-Hans">简体中文</option>
+        </select>
+    </div>
+
+    <div class="slider">
+        <label for="word-count-slider">Words limit in Slides</label>
+        <input type="range" id="word-count-slider" name="word-count-slider" min="100" max="500" step="100" value="100"
+            list="tickmarks">
+        <datalist id="tickmarks">
+            <option value="100"></option>
+            <option value="200"></option>
+            <option value="300"></option>
+            <option value="400"></option>
+            <option value="500"></option>
+        </datalist>
+        <h1>100᲼᲼᲼᲼᲼᲼᲼200᲼᲼᲼᲼᲼᲼᲼᲼300᲼᲼᲼᲼᲼᲼᲼᲼400᲼᲼᲼᲼᲼᲼᲼᲼500</h1>
+
+    </div>
+
+
+    <div class="arrow">
+        <a href="/keyword"><img src="https://cdn-icons-png.flaticon.com/512/10337/10337645.png" alt="arrow"></a>
+    </div>
+    <script>
+        const language = document.getElementById('language-picker-select');
+        const wordCount = document.getElementById('word-count-slider');
+        let lang = "en";
+        let count = 0;
+        language.addEventListener('change', () => {
+            lang = language.value;
+        });
+
+        wordCount.addEventListener('change', () => {
+            count = wordCount.value;
+        });
+
+        const arrow = document.querySelector('.arrow');
+
+        arrow.addEventListener('click', () => {
+            fetch('/language', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    language: lang,
+                    wordCount: count
+                })
+            }).then(res => res.json()).then(data => {
+                console.log(data);
+            })
+        });
+
+    </script>
+</body>
+
+</html>

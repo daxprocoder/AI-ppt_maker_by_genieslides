@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="verification.css">
+    <title>verification</title>
+</head>
+
+<body>
+    <div class=verification>
+        <img src="https://cdn.discordapp.com/attachments/777919148985810945/1095982859031937034/genslides_lgo.png"
+            alt="Logo">
+        <h2>Genieslides</h2>
+        <h1>Please verify your account</h1>
+        <p>enter the verification code sent to your email</p>
+        <!-- problem, if we change the /verify to login here, the server automatically logs in the user ooof -->
+        <form action="/signup/verify" method="POST">
+            <input type="text" name="verificationCode" placeholder="Code" maxlength="5">
+            <button class="verifybtn" type="submit" value="verify">
+                <!-- <input type="submit" value="verify"> -->
+                VERIFY
+             </button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Login</title>
+
+</head>
+
+<body>
+
+    <!-- <div id="loading">
+                <img src="./images/geniegif.gif" alt="Genie" class="genie">
+                <script src="./website javascript/loading.js"></script>
+            </div> -->
+
+    <div class=brand>
+        <img src="./images/genslides lgo.png" alt="logo">
+        <h1 class="heading">GenieSlides</h1>
+    </div>
+
+
+    <form action="/login" method="post" onsubmit="return validateForm()">
+        <input type="text" id="email" name="email" placeholder="Email" required><br><br>
+        <input style="display: inline;" type="password" id="password" name="password" placeholder="Password" required>
+        <span toggle="#password" class="eye-icon"><img src="https://cdn-icons-png.flaticon.com/512/4643/4643964.png"
+                alt=""></span><br><br>
+        <input type="submit" value="Login">
+        <h1>or</h1>
+        <button><a style="text-decoration:none;" href="#">Continue with Google</a></button>
+        <p>If you don't have an account, <a href="/signup">create one</a>.</p>
+        <script src='./website javascript/eye.js'></script>
+    </form>
+
+</body>
+
+<script>
+    // Get the URL of the current page
+    const url = window.location.href;
+
+    // Extract query parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('error');
+    const successmes = urlParams.get('success');
+
+    console.log(message);
+
+    // Display the URL and extracted query parameter
+    if (message === "1") {
+        // Create the alert box element
+        var alertBox = document.createElement('div');
+        alertBox.className = 'alert';
+        alertBox.innerHTML = '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+            '<strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.';
+
+        // Apply styles to the alert box
+        alertBox.style.position = 'fixed';
+        alertBox.style.top = '8%';
+        alertBox.style.left = '50%';
+        alertBox.style.transform = 'translate(-50%, -50%)';
+        alertBox.style.background = 'linear-gradient(to right top, rgb(255 0 0 / 80%), rgb(245 196 164 / 80%))';
+        alertBox.style.border = '1px solid rgba(0,106,255,0.8)';
+        alertBox.style.borderRadius = '5px';
+        alertBox.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 106, 255, 0.3)';
+        alertBox.style.color = '#fff';
+        alertBox.style.paddingRight = '35px';
+        alertBox.style.textAlign = 'center';
+        alertBox.style.opacity = '0'; // Set initial opacity to 0
+
+        // Define animation using CSS keyframes for fade-in and fade-out
+        var fadeInAnimationName = 'fadein';
+        var fadeOutAnimationName = 'fadeout';
+        var keyframes = `
+        @keyframes ${fadeInAnimationName} {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes ${fadeOutAnimationName} {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    `;
+        var style = document.createElement('style');
+        style.innerHTML = keyframes;
+        document.head.appendChild(style);
+
+        // Apply fade-in animation to the alert box
+        alertBox.style.animation = `${fadeInAnimationName} 1s ease-in-out forwards`; // Apply animation with 1s duration
+
+        // Style the close button
+        var closeButton = alertBox.querySelector('.close');
+        closeButton.style.position = 'absolute';
+        closeButton.style.right = '10px';
+        closeButton.style.color = '#fff';
+        closeButton.style.textDecoration = 'none';
+        closeButton.style.fontSize = '18px';
+        closeButton.style.opacity = '0.8';
+        closeButton.style.transition = 'opacity 0.3s ease';
+
+        // Add click event listener to the close button
+        closeButton.addEventListener('click', function () {
+            // Apply fade-out animation to the alert box
+            alertBox.style.animation = `${fadeOutAnimationName} 0.5s ease-in-out forwards`; // Apply animation with 0.5s duration
+
+            // Remove the alert box element from the DOM after fade-out animation is complete
+            setTimeout(function () {
+                alertBox.remove();
+            }, 500);
+        });
+
+        closeButton.addEventListener('mouseover', function () {
+            closeButton.style.opacity = '1';
+        });
+
+        closeButton.addEventListener('mouseout', function () {
+            closeButton.style.opacity = '0.8';
+        });
+
+        // Append the alert box element to the DOM
+        document.body.appendChild(alertBox);
+    }
+
+    if (successmes == "1") {
+        // Create the alert box element
+        var alertBox = document.createElement('div');
+        alertBox.className = 'alert alert-success alert-dismissible fade in';
+        alertBox.innerHTML = '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+            '<strong>Success!</strong> This alert box could indicate a successful or positive action.';
+
+        // Append the alert box element to the DOM
+        document.body.appendChild(alertBox);
+
+    }
+
+
+    // Define a function to validate the form
+
+    function isValidPassword(password) {
+        // Check for minimum length
+        if (password.length < 8) {
+            return false;
+        }
+
+        // Check for uppercase letter
+        if (!/[A-Z]/.test(password)) {
+            return false;
+        }
+
+        // Check for lowercase letter
+        if (!/[a-z]/.test(password)) {
+            return false;
+        }
+
+        // Check for symbol
+        if (!/[\W_]/.test(password)) {
+            return false;
+        }
+
+        // Check for number
+        if (!/\d/.test(password)) {
+            return false;
+        }
+
+        // All criteria met
+        return true;
+    }
+
+    function validateForm() {
+        var passwordInput = document.getElementById('password');
+        var password = passwordInput.value;
+
+        if (!isValidPassword(password)) {
+            //alert('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one symbol, and one number.');
+            // return false;
+            return true;
+        }
+
+        return true;
+    }
+
+</script>
+
+</body>
+
+</html>
+
+</html>

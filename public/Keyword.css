@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100vh;
+    height: 100vh;;
+    background: rgb(0, 1, 166);
+    background: radial-gradient(circle, rgba(0, 1, 166, 1) 0%, rgba(0, 0, 0, 1) 49%);
+}
+
+/* remove scroll bar from the body*/
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* a small grey color of box in grey color transparent */
+
+.suggestion h1 {
+    position: absolute;
+    top: 2.5pc;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    margin-top: 0%;
+    margin-left: 11%;
+    font-size: 40px;
+}
+
+.suggestion p {
+    position: absolute;
+    top: 6pc;
+    left: 2pc;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    opacity: 50%;
+}
+
+.suggestion h1 {
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.suggestion p {
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.suggestion{
+        position: absolute;
+        color: white;
+        background-color: rgba(18, 18, 18, 0.823);
+        height: 650px;
+        width: 420px;
+        margin-left: 63%;
+        border-radius: 20PX;
+        top:2pc;
+}
+
+.suggestion {
+    backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+
+
+.keyword {
+    color: white;
+    background-color: rgba(18, 18, 18, 0.823);
+    height: 690px;
+    width: 850px;
+    margin-top: 4%;
+    margin-left: 11%;
+    border-radius: 20px;
+}
+
+.keyword h1 {
+    position: absolute;
+    top: 3.5pc;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    margin-top: 0%;
+    margin-left: 5%;
+    font-size: 40px;
+}
+
+.keyword .spinner {
+    position: absolute;
+    top: 3pc;
+    left: 37pc;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    background-color: rgba(21, 21, 21, 0.823);
+    padding: 10px 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 32px;
+    border: 1px solid #445dff;
+    box-shadow: 0 0 10px #00eaff;
+}
+
+.keyword {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.keyword p {
+    position: absolute;
+    top: 8pc;
+    left: 2pc;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    opacity: 100%;
+}
+
+.keyword h1 {
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.keyword p {
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.keyword h2 {
+    position: absolute;
+    top: 10pc;
+    left: 2pc;
+    color: white;
+    font-size: 20px;
+    font-family: 'ubuntu', sans-serif;
+    font-weight: lighter;
+    opacity: 50%;
+}
+
+.keyword input[type="text"] {
+    position: absolute;
+    top: 13pc;
+    left: 2pc;
+    color: white;
+    font-size: 20px;
+    font-family: 'ubuntu', sans-serif;
+    font-weight: lighter;
+    opacity: 50%;
+    background-color: rgba(0, 0, 0, 0.823);
+    padding: 10px;
+    border-radius: 20px;
+    text-align: left;
+    border: none;
+    box-shadow: 0 0 5px #ffffff;
+    width: 40%;
+}
+
+.keyword input[type="text"]:focus {
+    outline: none;
+    border: 2px solid blue;
+}
+
+.keyword .tag {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.keyword .tag > span{
+    margin-left: 14px;
+}
+
+.keyword .tag:hover {
+    cursor: pointer;
+}
+
+.tag {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #2a64bb, #504aa1);
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.tag::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    filter: blur(20px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.tag::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    opacity: 0.2;
+    z-index: -2;
+}
+
+/* arrow a img in right buttom corner of the page */
+
+.arrow a img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 90%;
+    left: 93%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+.keyword {
+    color: white;
+    background-color: rgba(18, 18, 18, 0.823);
+    height: 690px;
+    width: 850px;
+    margin-top: 4%;
+    margin-left: 11%;
+    border-radius: 20px;
+
+    /* Add the following animation properties */
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    transform: translateY(-50px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.suggestion {
+    position: absolute;
+    color: white;
+    background-color: rgba(18, 18, 18, 0.823);
+    height: 650px;
+    width: 420px;
+    margin-left: 63%;
+    border-radius: 20px;
+    top: 2pc;
+
+    /* Add the following animation properties */
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    transform: translateX(100px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

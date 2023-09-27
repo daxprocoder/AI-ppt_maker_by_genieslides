@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background: rgb(1, 67, 126);
+    background: radial-gradient(circle, rgba(1, 67, 126, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    height: 100vh;
+    width: 100vh;
+}
+
+/* h1 in centre of page in white color */
+
+.create h1 {
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    top: 43%;
+    /* Use top property instead of margin-top */
+    left: 36%;
+    /* Use left property instead of margin-left */
+    transform: translateX(-50%);
+    /* Center the element horizontally */
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+/* cool input in grey color  */
+
+.create input {
+    position: absolute;
+    top: 75%;
+    /* Use top property instead of margin-top */
+    left: 25%;
+    /* Use left property instead of margin-left */
+    width: 50%;
+    height: 8%;
+    border: none;
+    border-radius: 10px;
+    background: #3f424699;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'roboto', sans-serif;
+    font-weight: lighter;
+    color: #ffffff;
+    border: #3f424699;
+    background-color: #3f424699;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.create input[type="text"]:hover {
+    border: 1px solid #006aff;
+    box-shadow: 0 0 20px #006aff;
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #fafcff;
+    opacity: 30%;
+}
+
+/* remove the white line from input */
+
+.create input:focus {
+    outline: none;
+}
+
+/* set the bg-image with the resolution of screen */
+
+.bg-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.05s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* title a img comes after input box */
+
+.create .title a img {
+    position: absolute;
+    top: 75.5%;
+    /* Use top property instead of margin-top */
+    left: 78%;
+    /* Use left property instead of margin-left */
+    width: 50px;
+    height: 50px;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+/* Define the animation keyframes */
+
+@keyframes fadeInUp {
+        0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+        
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
